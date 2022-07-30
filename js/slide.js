@@ -1,6 +1,6 @@
 export default class Slide {
   constructor(slide, wrapper) {
-    this.slide = document.querySelector(slide);
+    this.slide = document.querySelector(slide)
     this.wrapper = document.querySelector(wrapper);
     this.dist = { finalPosition: 0, startX: 0, movement: 0 }
   }
@@ -10,8 +10,8 @@ export default class Slide {
     this.slide.style.transform = `translate3d(${distX}px, 0, 0)`;
   }
 
-  updatePosition(clientX){
-    this.dist.movement = this.startX - clientX;
+  updatePosition(clientX) {
+    this.dist.movement = (this.dist.startX - clientX) * 1.6;
     return this.dist.finalPosition - this.dist.movement;
   }
 
